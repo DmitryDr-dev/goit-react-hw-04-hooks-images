@@ -111,8 +111,6 @@ export function ImageGallery({ searchQuery }) {
     if (!searchQuery) {
       return;
     }
-    console.log('обновился запрос');
-    console.log(searchQuery);
 
     setStatus(Status.PENDING);
     try {
@@ -135,9 +133,9 @@ export function ImageGallery({ searchQuery }) {
       return null;
     case 'pending':
       return (
-        <div className="LoaderWrap">
+        <>
           <LoaderComponent />
-        </div>
+        </>
       );
     case 'resolved':
       return (
